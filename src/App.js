@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import {
   Layout, Breadcrumb
 } from 'antd';
-import MainMenu from './layout/MainMenu';
+import MainMenu from './layout/menu/MainMenu';
 import './App.css';
 
 const {
-  Header, Content, Footer, Sider,
+  Header, Content, Footer
 } = Layout;
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <MainMenu/>
+        <MainMenu />
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }} />
           <Content style={{ margin: '0 16px' }}>
