@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import {IconFont} from '../component/IconFont';
-import {menuData, iconFontURL} from './MenuConfig';
+import { Link } from 'react-router-dom';
+import {menuData, iconFontURL} from './router.config';
 import {
     Menu, Icon, Layout
 } from 'antd';
@@ -47,16 +48,20 @@ export default class MainMenu extends Component {
                                     {
                                         value.children.map((child) => {
                                             return (
-                                                <Menu.Item key={child.key}>{child.title}</Menu.Item>
+                                                    <Menu.Item key={child.key}>
+                                                    <Link to={child.link}>{child.title}</Link></Menu.Item>
+                                                
                                             )
                                         })
                                     }
                                 </SubMenu>
                             ) : (
-                                <Menu.Item key={value.key} >
-                                    <IconFont style={value.style} type={value.icon} />
-                                    <span>{value.title}</span>
-                                </Menu.Item>
+                                    <Menu.Item key={value.key} >
+                                       <Link to={value.link}> 
+                                            <IconFont style={value.style} type={value.icon} />
+                                            <span>{value.title}</span>
+                                        </Link>
+                                    </Menu.Item>
                             )
                         )
                     })
